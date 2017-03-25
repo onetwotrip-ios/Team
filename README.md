@@ -1,7 +1,7 @@
 
 ### OneTwoTrip Team
 
-- [Workflows](https://github.com/rambler-ios/team/issues)
+- [Workflows](/Workflows)
 
   *Comprehensive guide to do your first commit to OneTwoTrip (Git, Jira, Codestyle and stuff)* 
 
