@@ -1,4 +1,13 @@
-#iOS Interview
+# iOS Interview
+
+### 0. Test
+* 
+*
+*
+*
+*
+*
+
 ### 1. Snippets
 
 - Что выведется в консоль в при выполнении метода -method объекта класса C?
