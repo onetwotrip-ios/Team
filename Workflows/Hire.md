@@ -57,50 +57,6 @@
 }
 ```
 
-
-- Какие есть проблемы с этим кодом?
-```objc
-
-@interface OTTPlayground : NSObject
-@end
-
-@implementation OTTPlayground
-
-- (void) post
-{
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"someNotification" object: nil];
-  });
-}
-
-- (void) subscribe
-{
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(someMethod)
-                                                 name: @"someNotification"
-                                               object: nil];
-  });
-}
-
-- (void) someMethod
-{
-  NSLog(@"Hello world");
-}
-
-- (instancetype) init
-{
-  if (self = [super init])
-  {
-    [self subscribe];
-    [self post];
-  }
-  return self;
-}
-
-@end
-```
-
 - Что выведется в консоль?
 
 ```objc
