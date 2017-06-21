@@ -42,6 +42,22 @@
 }
 ```
 
+- Все ли в порядке с этим кодом?
+
+```objc
+- (void)viewDidLoad
+{
+    UILabel *label = [UILabel new];
+    label.text = @"Pending...";
+    [self.view addSubview: label];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        label.text = @"Some text";
+    });
+}
+```
+
+
 - Какие есть проблемы с этим кодом?
 ```objc
 
@@ -112,21 +128,6 @@ NSLog(@"D %d", ++i);
     
     block();
     NSLog(@"%d", i);
-}
-```
-
-- Все ли в порядке с этим кодом?
-
-```objc
-- (void)viewDidLoad
-{
-    UILabel *label = [UILabel new];
-    label.text = @"Pending...";
-    [self.view addSubview: label];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        label.text = @"Some text";
-    });
 }
 ```
 
