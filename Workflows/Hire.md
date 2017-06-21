@@ -41,19 +41,6 @@
     [a someMethod];
 }
 ```
-- Выведется ли в консоль «Hello world»? Почему?
-
-```objc
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        NSLog(@"Hello world");
-    });
-
-   /* Another implementation */
-   return YES;
-}
-```
 
 - Какие есть проблемы с этим кодом?
 ```objc
